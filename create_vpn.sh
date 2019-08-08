@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ $# != 2 ];then
 ``echo "USAGE: sh $0 add/del username"
 ``exit 1;
@@ -114,7 +115,7 @@ num1=`ps -ef|grep "server.conf"|grep -v grep|awk '{print $2}'`
 kill -9 $num1 && sleep 2
 /usr/sbin/openvpn --config /etc/openvpn/server.conf  > /tmp/open.log 2>&1 &
 if [ $? -eq 0 ];then
-   echo "警告: $USER账号已被注销, 即刻生效!"
+   echo "警告: $USER 账号已被注销, 即刻生效!"
 fi
 
 rm $TMP2
